@@ -25,17 +25,25 @@ namespace GBC
 
         private int OnExecute()
         {
-            var gbc = new GitBetCom();
-            gbc.RepositoryName = RepositoryName;
-            gbc.Author = AuthorName;
-            var data = gbc.BetweenLatest2Commits().GetAwaiter().GetResult();
-            var lines = data
-                .Select(it => $"at {it.CommitDate}  {it.Author} {it.Message}")
-                .ToArray();
-            ;
-            Console.WriteLine(string.Join(Environment.NewLine, lines));
-
-            return 0;
+            try
+            {
+                var gbc = new GitBetCom();
+                gbc.RepositoryName = RepositoryName;
+                gbc.Author = AuthorName;
+                var data = gbc.BetweenLatest2Commits().GetAwaiter().GetResult();
+                var lines = data
+                    .Select(it => $"at {it.CommitDate}  {it.Author} {it.Message}")
+                    .ToArray();
+                ;
+                Console.WriteLine(string.Join(Environment.NewLine, lines));
+                return 0;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("exception !" + ex.ToString());
+                return -1;
+            }
+            
         }
     }
 }

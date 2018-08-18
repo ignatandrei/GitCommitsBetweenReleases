@@ -10,11 +10,28 @@
     <Authors>Andrei Ignat</Authors>
     <Company>AOM</Company>
     <Product>GitCommentsBetweenCommits</Product>
-    <Description>GitCommentsBetweenCommits</Description>
+    <Description>GitCommentsBetweenCommits
+
+Install with dotnet tool install --global dotnet-gcr
+
+
+run with dotnet gcr for example
+
+dotnet gcr ignatandrei AOP_With_Roslyn
+
+NuGet at https://www.nuget.org/packages/dotnet-gcr/
+Code at https://github.com/ignatandrei/GitCommitsBetweenReleases/</Description>
+    <Copyright>MIT</Copyright>
+    <PackageLicenseUrl>https://github.com/ignatandrei/GitCommitsBetweenReleases/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>http://msprogrammer.serviciipeweb.ro/category/gitcommits/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ignatandrei/GitCommitsBetweenReleases</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>Git commits</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="build.bat" />
+    <None Remove="dotnet-gcr.1.1.0.nupkg" />
     <None Remove="dotnet-gcr.2.0.0.nupkg" />
   </ItemGroup>
 
